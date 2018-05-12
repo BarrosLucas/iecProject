@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IecProject</string>
+    <string name="register">Cadastrar</string>[
+    <string name="next">Próximo</string>
+    <string name="back">Anterior</string>
+    
+    <string name="microphone">&#xf130;</string>
 </resources>
