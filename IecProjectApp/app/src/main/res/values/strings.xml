@@ -3,6 +3,12 @@
     <string name="register">Cadastrar</string>[
     <string name="next">Próximo</string>
     <string name="back">Anterior</string>
-    
-    <string name="microphone">&#xf130;</string>
+    <string name="user">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="login">Entrar</string>
+    <string name="connect">Mantenha-me conectado</string>
+    <string name="new_account">Criar uma conta</string>
+    <string name="nickname">Apelido</string>
+
+
 </resources>
