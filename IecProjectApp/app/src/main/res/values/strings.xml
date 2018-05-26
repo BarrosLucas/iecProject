@@ -9,6 +9,8 @@
     <string name="connect">Mantenha-me conectado</string>
     <string name="new_account">Criar uma conta</string>
     <string name="nickname">Apelido</string>
+    <string name="send">Enviar</string>
+    <string name="type_message">Digite aqui...</string>
 
 
 </resources>

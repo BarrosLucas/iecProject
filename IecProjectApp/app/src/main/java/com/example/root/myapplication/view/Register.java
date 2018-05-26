@@ -1,4 +1,4 @@
-package com.example.root.myapplication;
+package com.example.root.myapplication.view;
 
 import com.example.root.myapplication.FontAwesome.FontManager;
 import com.example.root.myapplication.R;

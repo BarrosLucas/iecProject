@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/gray"
-    tools:context="com.example.root.myapplication.MainActivity">
+    tools:context="com.example.root.myapplication.view.MainActivity">
 
     <ImageView
         android:layout_width="wrap_content"
