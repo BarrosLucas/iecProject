@@ -36,9 +36,9 @@ public class ControllerDatabase {
 
     public Login loadData() {
         Cursor cursor;
-        String[] campos = {Database.ID, Database.USER, Database.PASSWORD};
+        String[] fields = {Database.ID, Database.USER, Database.PASSWORD};
         db = database.getReadableDatabase();
-        cursor = db.query(database.TABLE, campos, null, null, null, null, null, null);
+        cursor = db.query(Database.TABLE, fields, null, null, null, null, null, null);
 
         if (cursor != null) {
             cursor.moveToFirst();

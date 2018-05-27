@@ -22,8 +22,8 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE "+TABLE+"("+
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                USER + " TEXT, "+
-                PASSWORD + "TEXT)";
+                USER + " TEXT NOT NULL, "+
+                PASSWORD + "TEXT NOT NULL)";
         db.execSQL(sql);
     }
 
