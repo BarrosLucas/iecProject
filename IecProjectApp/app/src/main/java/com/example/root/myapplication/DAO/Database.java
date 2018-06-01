@@ -3,6 +3,7 @@ package com.example.root.myapplication.DAO;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -24,7 +25,9 @@ public class Database extends SQLiteOpenHelper {
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 USER + " TEXT NOT NULL, "+
                 PASSWORD + "TEXT NOT NULL)";
+
         db.execSQL(sql);
+        Log.i("VEIO?","SIM");
     }
 
     @Override

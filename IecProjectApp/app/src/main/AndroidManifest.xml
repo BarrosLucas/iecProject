@@ -19,10 +19,11 @@
         </activity>
         <activity android:name=".view.Register" />
         <activity
-            android:name=".view.Login"
+            android:name=".view.LoginScreen"
             android:label="@string/app_name" />
+        <activity android:name=".view.TalkActivity" android:label="Chat"/>
         <activity
-            android:name=".InitialScreen"
+            android:name=".view.InitialScreen"
             android:label="@string/title_activity_initial_screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

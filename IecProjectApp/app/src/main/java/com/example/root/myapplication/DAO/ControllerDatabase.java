@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.root.myapplication.Model.Login;
 
@@ -36,23 +37,26 @@ public class ControllerDatabase {
 
     public Login loadData() {
         Cursor cursor;
-        String[] fields = {Database.ID, Database.USER, Database.PASSWORD};
+        String[] fields = {Database.ID};
         db = database.getReadableDatabase();
         cursor = db.query(Database.TABLE, fields, null, null, null, null, null, null);
 
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
-        else{
+        if(cursor == null){
+            db.close();
             return null;
         }
-        db.close();
+        cursor.moveToFirst();
+        if(cursor.getCount() == 0){
+            db.close();
+            return null;
+        }
 
         Login login = new Login();
         login.setIdLogin(cursor.getInt(cursor.getColumnIndex(Database.ID)));
         login.setUsername(cursor.getString(cursor.getColumnIndex(Database.USER)));
         login.setPassword(cursor.getString(cursor.getColumnIndex(Database.PASSWORD)));
 
+        db.close();
 
         return login;
     }

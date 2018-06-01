@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8">
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-        </HorizontalScrollView>
+            <ListView
+                android:id="@+id/chat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
 
     </LinearLayout>
     <LinearLayout
@@ -23,25 +23,20 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="1">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dip"
-        android:background="#000000" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="8"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send"
-            android:hint="@string/type_message"
-            />
+            android:hint="@string/type_message" />
     </LinearLayout>
     </LinearLayout>
 </LinearLayout>

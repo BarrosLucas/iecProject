@@ -3,12 +3,15 @@ package com.example.root.myapplication.view;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.root.myapplication.DAO.ControllerDatabase;
 import com.example.root.myapplication.DAO.LoginDao;
 import com.example.root.myapplication.Model.Login;
 import com.example.root.myapplication.R;
@@ -23,6 +26,7 @@ public class LoginScreen extends AppCompatActivity {
     Button loginButton;
     EditText username,password;
     CheckBox checkBox;
+    ControllerDatabase controllerDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +38,31 @@ public class LoginScreen extends AppCompatActivity {
         checkBox = (CheckBox) findViewById(R.id.connect);
 
         loginButton = (Button) findViewById(R.id.login_button);
+        controllerDatabase = new ControllerDatabase(this);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(username.getText().toString().equals(Test.userlogin.getUsername()) && (password.getText().toString().equals(Test.userlogin.getPassword()))){
+                    if(checkBox.isChecked()){
+                        controllerDatabase.insertLogin(Test.userlogin.getUsername(),Test.userlogin.getPassword());
+                        Log.i("Conectado","Conectou");
+                    }
+                    Intent intent = new Intent(getBaseContext(),InitialScreen.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(getBaseContext(),"Usuario ou senha errado",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        /*loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!username.getText().toString().isEmpty() && !password.getText().toString().isEmpty()) {
 
-                    com.example.root.myapplication.Model.Login login = new com.example.root.myapplication.Model.Login();
+                    final com.example.root.myapplication.Model.Login login = new com.example.root.myapplication.Model.Login();
                     login.setUsername(username.getText().toString());
                     login.setPassword(password.getText().toString());
 
@@ -51,17 +74,11 @@ public class LoginScreen extends AppCompatActivity {
                             if(response.isSuccessful()){
                                 LoginDao.loginDAO = response.body();
                                 if(checkBox.isChecked()){
-
-
-
-
-
-
-
-
-
-
+                                    controllerDatabase.insertLogin(response.body().getUsername(),response.body().getPassword());
                                 }
+                                Intent intent = new Intent(getBaseContext(),InitialScreen.class);
+                                startActivity(intent);
+                                finish();
                                 //NextScreem
                             }else{
                                 Toast.makeText(getBaseContext(),"Login e senha não correspondem",Toast.LENGTH_SHORT).show();
@@ -77,7 +94,7 @@ public class LoginScreen extends AppCompatActivity {
                     });
                 }
             }
-        });
+        });*/
     }
     public void createAccount(View view){
         Intent intent = new Intent(this, Register.class);

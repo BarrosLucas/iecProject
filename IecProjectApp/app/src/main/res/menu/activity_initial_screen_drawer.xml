@@ -6,17 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/newuser16"
-            android:title="Import" />
+            android:icon="@drawable/newuser24"
+            android:title="@string/talk" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/logout16"
-                android:title="Share" />
+                android:icon="@drawable/logout24"
+                android:title="@string/logout" />
         </menu>
     </item>
 
 </menu>
+
+
