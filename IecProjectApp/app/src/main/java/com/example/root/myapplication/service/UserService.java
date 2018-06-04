@@ -23,7 +23,7 @@ public interface UserService {
 
     //Create User
     @POST("user/new")
-    Call<User> createPiecePost(@Body User user);
+    Call<User> createUser(@Body User user);
 
 
 }

@@ -29,14 +29,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
+            android:id="@+id/msgedit"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="8"/>
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:text="@string/send"
-            android:hint="@string/type_message" />
+            android:hint="@string/type_message"
+            android:onClick="sendMessage"/>
     </LinearLayout>
     </LinearLayout>
 </LinearLayout>

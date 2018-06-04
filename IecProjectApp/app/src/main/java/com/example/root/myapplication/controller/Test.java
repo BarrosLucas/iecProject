@@ -1,4 +1,4 @@
-package com.example.root.myapplication.view;
+package com.example.root.myapplication.controller;
 
 import com.example.root.myapplication.Model.Message;
 import com.example.root.myapplication.Model.User;
@@ -14,6 +14,20 @@ public class Test {
         completeUsers();
         completeMessages();
         generateUserLogin();
+    }
+
+    public static User isUser(String username, String password){
+        for(User user: users){
+            if(user.getUsername().equals(username)){
+                if(user.getPassword().equals(password)){
+                    userlogin = user;
+                    return user;
+                }else{
+                    return null;
+                }
+            }
+        }
+        return null;
     }
 
     public static void completeUsers(){

@@ -16,6 +16,7 @@ public class Message {
         setDatetime(datetime);
 
     }
+    public Message(){}
 
     public int getId() {
         return id;

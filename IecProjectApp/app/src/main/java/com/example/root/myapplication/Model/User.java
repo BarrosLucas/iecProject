@@ -14,6 +14,7 @@ public class User {
         setUsername(username);
         setPassword(password);
     }
+    public User(){}
 
     public int getId() {
         return id;

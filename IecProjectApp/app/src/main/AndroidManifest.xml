@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.root.myapplication">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,15 +22,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.Register" />
+        <activity
+            android:name=".view.Register"
+            android:parentActivityName=".view.LoginScreen" />
         <activity
             android:name=".view.LoginScreen"
             android:label="@string/app_name" />
-        <activity android:name=".view.TalkActivity" android:label="Chat"/>
+        <activity
+            android:name=".view.TalkActivity"
+            android:label="Chat"
+            android:parentActivityName=".view.InitialScreen" />
         <activity
             android:name=".view.InitialScreen"
             android:label="@string/title_activity_initial_screen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.PairedDevice"
+            android:label="@string/paired_devices"
+            android:parentActivityName=".view.InitialScreen" />
+        <activity android:name=".view.DiscoverDevices" android:parentActivityName=".view.InitialScreen" android:label="@string/find"></activity>
     </application>
 
 </manifest>

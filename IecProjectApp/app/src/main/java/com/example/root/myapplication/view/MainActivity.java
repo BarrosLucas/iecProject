@@ -4,20 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.root.myapplication.DAO.ControllerDatabase;
-import com.example.root.myapplication.DAO.LoginDao;
-import com.example.root.myapplication.Model.Login;
 import com.example.root.myapplication.R;
-import com.example.root.myapplication.retrofit.RetrofitConfig;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.example.root.myapplication.controller.ConnectionThread;
+import com.example.root.myapplication.controller.Test;
 
 public class MainActivity extends Activity {
+    public static ConnectionThread connectionThread = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

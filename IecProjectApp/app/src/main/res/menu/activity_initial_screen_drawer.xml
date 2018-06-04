@@ -5,15 +5,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_talk"
             android:icon="@drawable/newuser24"
             android:title="@string/talk" />
+        <item
+            android:id="@+id/nav_device"
+            android:icon="@drawable/device24"
+            android:title="Conectar" />
     </group>
+
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_logout"
                 android:icon="@drawable/logout24"
                 android:title="@string/logout" />
         </menu>

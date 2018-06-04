@@ -21,6 +21,9 @@
     <string name="at">&#64;username</string>
     <string name="logout">Sair</string>
     <string name="talk">Conversar</string>
+    <string name="find_devices">Buscar Dispositivos Disponíveis</string>
+    <string name="paired_devices">Dispositivos Pareados</string>
+    <string name="find">Buscar Dispositivos</string>
 
 
 </resources>

@@ -1,15 +1,12 @@
-package com.example.root.myapplication.view;
+package com.example.root.myapplication.controller;
 
 import android.content.Context;
-import android.text.Layout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.root.myapplication.DAO.LoginDao;
 import com.example.root.myapplication.Model.Message;
 import com.example.root.myapplication.R;
 
@@ -54,7 +51,7 @@ public class SimplesAdapterTalk extends BaseAdapter {
         TextView sender = (TextView) view.findViewById(R.id.sender);
         TextView text = (TextView) view.findViewById(R.id.text);
 
-        if(message.getRecipient().getUsername().equals(Test.userlogin.getUsername())){
+        if(message.getSender().getUsername().equals(Test.userlogin.getUsername())){
             sender.setText("EU: ");
         }else{
             sender.setText(message.getSender().getFirstName().toUpperCase()+" "+message.getSender().getLastName().toUpperCase()+": ");

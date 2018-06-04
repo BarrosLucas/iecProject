@@ -8,18 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.root.myapplication.DAO.ControllerDatabase;
-import com.example.root.myapplication.DAO.LoginDao;
-import com.example.root.myapplication.Model.Login;
 import com.example.root.myapplication.R;
-import com.example.root.myapplication.retrofit.RetrofitConfig;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.example.root.myapplication.controller.Test;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -43,7 +36,7 @@ public class LoginScreen extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(username.getText().toString().equals(Test.userlogin.getUsername()) && (password.getText().toString().equals(Test.userlogin.getPassword()))){
+                if(Test.isUser(username.getText().toString(),password.getText().toString()) != null){
                     if(checkBox.isChecked()){
                         controllerDatabase.insertLogin(Test.userlogin.getUsername(),Test.userlogin.getPassword());
                         Log.i("Conectado","Conectou");
@@ -76,6 +69,7 @@ public class LoginScreen extends AppCompatActivity {
                                 if(checkBox.isChecked()){
                                     controllerDatabase.insertLogin(response.body().getUsername(),response.body().getPassword());
                                 }
+                                CallbackEveryMessageUser.syncronize();
                                 Intent intent = new Intent(getBaseContext(),InitialScreen.class);
                                 startActivity(intent);
                                 finish();
